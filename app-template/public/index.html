@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5ef">
+  <title>Meta Ads Office</title>
+  <link rel="stylesheet" href="/app.css">
+  <link rel="stylesheet" href="/karni.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="/">META ADS <span>OFFICE</span></a>
+      <div class="account"><span id="signed-in-user"></span><button id="sign-out" class="secondary-button" hidden>로그아웃</button></div>
+    </header>
+    <section class="hero">
+      <p class="eyebrow">META CAMPAIGN WORKSPACE</p>
+      <h1>광고 성과와 소재 작업을<br>한곳에서 관리하세요.</h1>
+      <p class="lead">Meta 계정을 연결해 성과를 확인하고, 검토 가능한 광고 초안과 미리보기를 준비합니다.</p>
+    </section>
+    <section class="panel" id="meta-report" aria-labelledby="report-title">
+      <div class="section-heading"><div><p class="eyebrow">REPORTING</p><h2 id="report-title">성과 보고서</h2></div><span id="meta-status-label" class="status">연결 대기</span></div>
+      <p id="meta-summary" class="muted">Meta 계정을 연결해 보고서를 불러오세요.</p>
+      <div class="toolbar">
+        <button id="meta-connect" class="primary-button" type="button">Meta 광고 연결</button>
+        <select id="meta-account" aria-label="광고 계정" hidden></select>
+        <select id="meta-period" aria-label="조회 기간" hidden>
+          <option value="yesterday">어제</option><option value="last_7d" selected>최근 7일</option><option value="last_14d">최근 14일</option><option value="last_28d">최근 28일</option><option value="this_month">이번 달</option>
+        </select>
+        <button id="meta-refresh" class="primary-button" type="button" hidden>보고서 새로고침</button>
+        <button id="meta-disconnect" class="secondary-button" type="button" hidden>Meta 연결 해제</button>
+      </div>
+      <div class="metrics">
+        <article><span>지출</span><strong id="meta-spend">—</strong></article><article><span>노출</span><strong id="meta-impressions">—</strong></article><article><span>링크 클릭</span><strong id="meta-clicks">—</strong></article><article><span>도달</span><strong id="meta-reach">—</strong></article><article><span>랜딩 페이지 조회</span><strong id="meta-landing-views">—</strong></article><article><span>구매</span><strong id="meta-purchases">—</strong></article><article><span>리드</span><strong id="meta-leads">—</strong></article>
+      </div>
+      <h3 class="table-title">캠페인별 성과</h3>
+      <div class="table-scroll"><table><thead><tr><th>캠페인</th><th>상태</th><th>목표</th><th>일 예산</th><th>총 예산</th><th>지출</th><th>노출</th><th>클릭</th></tr></thead><tbody id="meta-campaign-rows"><tr><td colspan="8">연결 대기 중입니다.</td></tr></tbody></table></div>
+      <h3 class="table-title">최근 7일 일별 기록</h3><p id="meta-history-status" class="muted">보고서 새로고침 후 저장됩니다.</p>
+      <div class="table-scroll"><table><thead><tr><th>날짜</th><th>지출</th><th>노출</th><th>클릭</th><th>도달</th><th>랜딩 조회</th><th>구매</th><th>리드</th></tr></thead><tbody id="meta-daily-rows"><tr><td colspan="8">Meta 연결 후 최근 7일을 불러옵니다.</td></tr></tbody></table></div>
+    </section>
+    <div id="meta-report-anchor"></div>
+    <footer><span>Meta Ads Office Starter Kit</span><span>보고서 기준 시간: 한국 시간</span></footer>
+  </main>
+  <section class="auth-overlay" id="auth-overlay" aria-labelledby="auth-title" hidden>
+    <form class="auth-card" id="auth-form"><p class="eyebrow">PRIVATE WORKSPACE</p><h2 id="auth-title">로그인</h2><p class="muted">관리자가 Supabase에서 등록한 이메일로 로그인하세요.</p>
+      <label>이메일<input id="auth-email" type="email" autocomplete="username" required></label><label>비밀번호<input id="auth-password" type="password" autocomplete="current-password" required></label>
+      <p id="auth-error" class="error" role="alert"></p><button class="primary-button" id="auth-submit" type="submit">로그인</button>
+    </form>
+  </section>
+  <script src="/dashboard.js" defer></script>
+  <script src="/karni.js" defer></script>
+  <script src="/karni-preview.js" defer></script>
+</body>
+</html>
