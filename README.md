@@ -28,7 +28,7 @@ Meta 광고 연결, 성과 조회, 소재 접수, 미게재 초안과 Meta 미�
 저장소 루트에서 Codex CLI를 사용하는 경우:
 
 ```sh
-gh skill install <owner>/<repository> meta-ads-office-setup --agent codex --scope user
+gh skill install gimiyoni6378-dot/meta-ads-office-starter meta-ads-office-setup --agent codex --scope user
 ```
 
 또는 `.agents/skills/meta-ads-office-setup/` 폴더를 대상 프로젝트의 `.agents/skills/` 아래 복사합니다. 이는 Codex의 개발 안내를 설치하는 것이며 앱 배포나 Meta 계정 연결은 별도입니다.
